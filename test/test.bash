@@ -10,4 +10,4 @@ colcon build
 source $dir/.bashrc
 ros2 launch robosys2022_ros2 cipher_launch.py > /tmp/robosys2022_ros2.log
 
-cat /tmp/robosys2022_ros2.log | grep -e "暗号文：" -e "解読文："
+cat /tmp/robosys2022_ros2.log | grep "解読文："
