@@ -7,16 +7,19 @@ from std_msgs.msg import String
 
 class Receiver():
     def __init__(self, node):
-        self.pub = node.create_subscription(String, "cryptogram", self.cb, 10)
+        self.pub = node.create_subscription(String, "chatter", self.cb, 10)
+        self.result = ""
     def cb(self, msg):
         str = msg.data
+        key = str[-1]
+        str -= str[-1]
         for char in list(str):
             ascii = ord(char)
             num = ascii - 32
-            num = (num + self.key) % 96
+            num = (num + key) % 96
             ascii = num + 32
-            str += chr(ascii)
-        print("解読文：", str) 
+            self.result += chr(ascii)
+        print("解読文：", self.result) 
 
 def main():
     rclpy.init()

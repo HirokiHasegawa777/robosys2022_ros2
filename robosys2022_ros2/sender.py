@@ -7,11 +7,11 @@ from std_msgs.msg import String
 
 class Sender():
     def __init__(self, node):
-        self.pub = node.create_publisher(String, "cryptogram", 10)
+        self.pub = node.create_publisher(String, "chatter", 10)
         self.cryptogram = ""
         with open('/home/hiroki/ros2_ws/src/robosys2022_ros2/robosys2022_ros2/cryptogram.txt','r', encoding='UTF-8') as fp:
             str = fp.read()
-        self.key = 1
+        self.key = 3
         for char in list(str):
             ascii = ord(char)
             num = ascii - 32
@@ -22,8 +22,10 @@ class Sender():
         node.create_timer(2, self.cb)
     def cb(self):
         msg = String()
+        self.cryptogram += self.key
         msg.data = self.cryptogram
         self.pub.publish(msg)
+        #self.pub.publish(self.key)
 
 def main():
     rclpy.init()
