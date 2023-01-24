@@ -11,7 +11,7 @@ class Sender():
         self.cryptogram = ""
         with open('/home/hiroki/ros2_ws/src/robosys2022_ros2/robosys2022_ros2/cryptogram.txt','r', encoding='UTF-8') as fp:
             str = fp.read()
-        self.key = 3
+        self.key = 3 #秘密鍵を入力（0~9）
         for char in list(str):
             ascii = ord(char)
             num = ascii - 32
