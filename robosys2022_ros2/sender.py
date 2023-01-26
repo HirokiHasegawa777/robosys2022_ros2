@@ -18,7 +18,7 @@ class Sender():
             num = (num - self.key) % 96
             ascii = num + 32
             self.cryptogram += chr(ascii)
-        print("   暗号文：", self.cryptogram) 
+        print("  暗号文：", self.cryptogram) 
         node.create_timer(2, self.cb)
     def cb(self):
         msg = String()

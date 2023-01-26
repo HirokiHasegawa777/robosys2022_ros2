@@ -12,7 +12,7 @@ class Receiver():
     def cb(self, msg):
         str = list(msg.data)
         key = int(str.pop(-1))
-        print("秘密鍵", key)
+        print("秘密鍵：", key)
         for char in str:
             ascii = ord(char)
             num = ascii - 32
