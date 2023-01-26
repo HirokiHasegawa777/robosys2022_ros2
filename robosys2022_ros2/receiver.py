@@ -10,10 +10,10 @@ class Receiver():
         self.pub = node.create_subscription(String, "chatter", self.cb, 10)
         self.result = ""
     def cb(self, msg):
-        str = msg.data
-        key = str[-1]
-        str -= str[-1]
-        for char in list(str):
+        str = list(msg.data)
+        key = int(str.pop(-1))
+        print("秘密鍵", key)
+        for char in str:
             ascii = ord(char)
             num = ascii - 32
             num = (num + key) % 96
