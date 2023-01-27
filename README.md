@@ -2,7 +2,7 @@
 こちらは、千葉工業大学先進工学部未来ロボティクス学科2年4学期の講義で使用しているリポジトリです。  
 本パッケージではシーザー暗号を作って擬似的に通信することが出来ます。
 ## ノードとトピックの概要
-![Alt text](../../../Pictures/rosgraph.png)
+![rosgraph](https://user-images.githubusercontent.com/82253845/215096896-f774c5e2-7280-493e-aea8-57dccaeedf7a.png)
 * sender
     * cryptogram.txtを読み込み、秘密鍵の数字の分だけasciiコードをシフトすることで暗号文を作成。
 * receiver
