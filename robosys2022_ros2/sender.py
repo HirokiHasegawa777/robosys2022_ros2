@@ -10,8 +10,9 @@ class Sender():
     def __init__(self, node):
         self.pub = node.create_publisher(String, "chatter", 10)
         self.cryptogram = ""
-        with open('/home/hiroki/ros2_ws/src/robosys2022_ros2/robosys2022_ros2/cryptogram.txt','r', encoding='UTF-8') as fp:
-            str = fp.read()
+        f = open('src/robosys2022_ros2/robosys2022_ros2/cryptogram.txt','r',encoding='UTF-8')
+        str = f.read()
+        f.close()
         self.key = 9 #秘密鍵を必要に応じて変更（0~9）
         for char in list(str):
             ascii = ord(char)
