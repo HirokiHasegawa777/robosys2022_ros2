@@ -1,4 +1,5 @@
 # robosys2022_ros2
+[![test](https://github.com/HirokiHasegawa777/robosys2022_ros2/actions/workflows/test.yml/badge.svg)](https://github.com/HirokiHasegawa777/robosys2022_ros2/actions/workflows/test.yml)
 こちらは、千葉工業大学先進工学部未来ロボティクス学科2年4学期の講義で使用しているリポジトリです。  
 本パッケージではシーザー暗号を使って擬似的に通信することが出来ます。
 ## 使い方
